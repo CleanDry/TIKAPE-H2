@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependency/* TIKAPE-H2.Main
+web:    java -cp target/classes:target/dependency/*H2.Main
