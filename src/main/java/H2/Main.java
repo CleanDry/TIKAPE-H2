@@ -13,6 +13,8 @@ public class Main {
             Spark.port(Integer.valueOf(System.getenv("PORT")));
         }
         
+        System.out.println("Hello world!");
+        
         Database database = new Database("jdbc:sqlite:smoothiearkisto.db");
         SmoothieDAO smoothieDAO = new SmoothieDAO(database, "Smoothie");
         RaakaAineDAO raakaAineDAO = new RaakaAineDAO(database, "RaakaAine");
