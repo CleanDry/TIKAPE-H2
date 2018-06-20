@@ -95,7 +95,7 @@ public class SmoothieRaakaAineDAO implements Dao<SmoothieRaakaAine, Integer> {
                             + "WHERE RaakaAine.id = SmoothieRaakaAine.raaka_aine_id "
                             + "AND SmoothieRaakaAine.smoothie_id = Smoothie.id "
                             + "AND Smoothie.id = ? "
-                            + "GROUP BY SmoothieRaakaAine.jarjestys");
+                            + "GROUP BY SmoothieRaakaAine.jarjestys, RaakaAine.id");
             stmt.setInt(1, key);
             
             ResultSet result = stmt.executeQuery();
