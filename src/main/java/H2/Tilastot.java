@@ -21,7 +21,7 @@ public class Tilastot {
             
             ResultSet result = stmt.executeQuery();
             
-            if (result != null) {
+            if (result.next()) {
                 return result.getInt(1);
             } 
             
@@ -36,9 +36,9 @@ public class Tilastot {
             
             ResultSet result = stmt.executeQuery();
             
-            if (result != null) {
+            if (result.next()) {
                 return result.getInt(1);
-            } 
+            }  
             
             return null;
         }
