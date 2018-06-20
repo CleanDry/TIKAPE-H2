@@ -1,0 +1,20 @@
+CREATE TABLE Smoothie (
+	id integer PRIMARY KEY,
+	nimi varchar(200)
+);
+
+CREATE TABLE RaakaAine (
+	id integer PRIMARY KEY,
+	nimi varchar(200)
+);
+
+CREATE TABLE SmoothieRaakaAine (
+	id integer PRIMARY KEY,
+	smoothie_id integer,
+	raaka_aine_id integer,
+	jarjestys integer,
+	maara varchar(200),
+	ohje varchar(1000),
+	FOREIGN KEY (smoothie_id) REFERENCES Smoothie(id),
+	FOREIGN KEY (raaka_aine_id) REFERENCES RaakaAine(id)
+);

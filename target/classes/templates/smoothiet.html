@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Smoothiet</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            select{text-transform:capitalize;}
+        </style>
+    </head>
+    
+    <body>
+        <h2>Smoothiet</h2>
+        
+        <ul>
+            <li th:each="smoothie : ${smoothiet}">
+                <a th:href="@{~/smoothiet/{id}(id=${smoothie.id})}" th:text="${smoothie.name}" style="text-transform:capitalize">Smoothie</a>
+                <a th:href="@{~/smoothie/{id}(id=${smoothie.id})}">(poista)</a>
+            </li>
+        </ul>
+        
+        <h4>Lis‰‰ uusi</h4>
+        
+        <form method="POST" action="/smoothiet">
+            <span>Smoothien nimi:</span><br>
+            <input type="text" name="nimi"/><br>
+            <input type="submit" value="Lis‰‰"/>            
+        </form>
+        
+        <h4>Lis‰‰ raaka-aineita</h4>
+
+        <form method="POST" action="/smoothieraakaaineet">
+            Smoothien nimi:<br/>
+            <select name="smoothie">
+              <option th:each="smoothie : ${smoothiet}" 
+                  th:value="${smoothie.id}" th:text="${smoothie.name}">Smoothie
+              </option>
+            </select>
+            <br/>
+            
+            Lis‰tt‰v‰ raaka-aine<br/>
+            <select name="raakaAine">
+              <option th:each="raakaAine : ${raakaAineet}" 
+                  th:value="${raakaAine.id}" th:text="${raakaAine.name}">Raaka-aine                          
+              </option>
+            </select>            
+            <br/>
+            
+            J‰rjestys<br/>
+            <select name="jarjestys">
+                <option value="1">Ennen sekoitusta</option>
+                <option value="2">Sekoitukseen</option>
+                <option value="3">Sekoituksen j‰lkeen</option>                
+            </select>
+            <br>
+            
+            M‰‰r‰<br/>
+            <input type="text" name="maara" maxlength="200"/><br/>
+            
+            Ohje<br/>
+            <input type="text" name="ohje" maxlength="1000"/><br/>
+            
+            <input type="submit" value="Lis‰‰"/>
+        </form>
+        
+        
+        <ul>
+          <li>
+            <a href="../">Smoothielistaukseen</a>
+          </li>
+        </ul>
+          
+    </body>
+</html>
