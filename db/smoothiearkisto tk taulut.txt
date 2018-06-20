@@ -18,3 +18,25 @@ CREATE TABLE SmoothieRaakaAine (
 	FOREIGN KEY (smoothie_id) REFERENCES Smoothie(id),
 	FOREIGN KEY (raaka_aine_id) REFERENCES RaakaAine(id)
 );
+
+PostgreSQL
+CREATE TABLE Smoothie (
+	id SERIAL PRIMARY KEY,
+	nimi VARCHAR(200)
+);
+
+CREATE TABLE RaakaAine (
+	id SERIAL PRIMARY KEY,
+	nimi VARCHAR(200)
+);
+
+CREATE TABLE SmoothieRaakaAine (
+	id SERIAL PRIMARY KEY,
+	smoothie_id integer,
+	raaka_aine_id integer,
+	jarjestys integer,
+	maara VARCHAR(200),
+	ohje VARCHAR(1000),
+	FOREIGN KEY (smoothie_id) REFERENCES Smoothie(id),
+	FOREIGN KEY (raaka_aine_id) REFERENCES RaakaAine(id)
+);
