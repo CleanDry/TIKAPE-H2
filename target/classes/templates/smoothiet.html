@@ -20,15 +20,15 @@
             </li>
         </ul>
         
-        <h4>Lisää uusi</h4>
+        <h4>Lisï¿½ï¿½ uusi</h4>
         
         <form method="POST" action="/smoothiet">
             <span>Smoothien nimi:</span><br>
             <input type="text" name="nimi"/><br>
-            <input type="submit" value="Lisää"/>            
+            <input type="submit" value="Lisï¿½ï¿½"/>            
         </form>
         
-        <h4>Lisää raaka-aineita</h4>
+        <h4>Lisï¿½ï¿½ raaka-aineita</h4>
 
         <form method="POST" action="/smoothieraakaaineet">
             Smoothien nimi:<br/>
@@ -39,7 +39,7 @@
             </select>
             <br/>
             
-            Lisättävä raaka-aine<br/>
+            Lisï¿½ttï¿½vï¿½ raaka-aine<br/>
             <select name="raakaAine">
               <option th:each="raakaAine : ${raakaAineet}" 
                   th:value="${raakaAine.id}" th:text="${raakaAine.name}">Raaka-aine                          
@@ -47,27 +47,27 @@
             </select>            
             <br/>
             
-            Järjestys<br/>
+            Jï¿½rjestys<br/>
             <select name="jarjestys">
                 <option value="1">Ennen sekoitusta</option>
                 <option value="2">Sekoitukseen</option>
-                <option value="3">Sekoituksen jälkeen</option>                
+                <option value="3">Sekoituksen jï¿½lkeen</option>                
             </select>
             <br>
             
-            Määrä<br/>
+            Mï¿½ï¿½rï¿½<br/>
             <input type="text" name="maara" maxlength="200"/><br/>
             
             Ohje<br/>
             <input type="text" name="ohje" maxlength="1000"/><br/>
             
-            <input type="submit" value="Lisää"/>
+            <input type="submit" value="Lisï¿½ï¿½"/>
         </form>
         
         
         <ul>
           <li>
-            <a href="../">Smoothielistaukseen</a>
+            <a href="../index">Smoothielistaukseen</a>
           </li>
         </ul>
           

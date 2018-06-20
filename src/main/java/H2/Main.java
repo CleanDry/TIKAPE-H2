@@ -20,7 +20,7 @@ public class Main {
         Tilastot tilasto = new Tilastot(database);
         
         // etusivun lataaminen
-        Spark.get("/", (req, res) -> {
+        Spark.get("/index", (req, res) -> {
             HashMap map = new HashMap<>();
             map.put("smoothiet", smoothieDAO.findAll());
 
