@@ -89,7 +89,11 @@ public abstract class AbstractNamedObjectDAO<T extends AbstractNamedObject>
     @Override
     public void delete(Integer key) throws SQLException {
         try (Connection conn = database.getConnection()) {
-            PreparedStatement stmt = conn.prepareStatement("DELETE FROM " + tableName + " WHERE id = (?)");
+            PreparedStatement stmtEnsin = conn.prepareStatement(
+                    "DELETE FROM SmoothieRaakaAine WHERE " + tableName + ".id = ?");
+            stmtEnsin.setInt(1, key);
+            
+            PreparedStatement stmt = conn.prepareStatement("DELETE FROM " + tableName + " WHERE id = ?");
             stmt.setInt(1, key);
             stmt.executeUpdate();
         }
