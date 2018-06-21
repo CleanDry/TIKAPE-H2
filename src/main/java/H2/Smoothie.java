@@ -8,10 +8,7 @@ package H2;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author Sami Pulli
- */
+
 public class Smoothie extends AbstractNamedObject<Smoothie>{
 
     public Smoothie(Integer id, String nimi) {

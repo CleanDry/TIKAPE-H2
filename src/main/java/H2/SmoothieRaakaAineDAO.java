@@ -12,10 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Sami Pulli
- */
+
 public class SmoothieRaakaAineDAO implements Dao<SmoothieRaakaAine, Integer> {
     
     private Database database;

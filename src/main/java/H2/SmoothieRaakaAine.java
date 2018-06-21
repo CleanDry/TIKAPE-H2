@@ -5,10 +5,7 @@
  */
 package H2;
 
-/**
- *
- * @author Sami Pulli
- */
+
 public class SmoothieRaakaAine {
     private Integer id;
     private Integer smoothieId;
