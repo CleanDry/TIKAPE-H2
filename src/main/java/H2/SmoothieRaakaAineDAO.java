@@ -176,4 +176,24 @@ public class SmoothieRaakaAineDAO implements Dao<SmoothieRaakaAine, Integer> {
         
         return this.findByIds(sra.getSmoothieId(), sra.getRaakaAineId());
     }
+    
+    public void deleteByResourceId(Integer raakaAineId) throws SQLException {
+        try (Connection conn = database.getConnection()) {
+            PreparedStatement stmt = conn.prepareStatement(
+                    "DELETE FROM SmoothieRaakaAine WHERE raaka_aine_id = ?");
+            stmt.setInt(1, raakaAineId);
+            
+            stmt.executeUpdate();
+        }
+    }
+    
+    public void deleteBySmoothieId(Integer smoothieId) throws SQLException {
+        try (Connection conn = database.getConnection()) {
+            PreparedStatement stmt = conn.prepareStatement(
+                    "DELETE FROM SmoothieRaakaAine WHERE raaka_aine_id = ?");
+            stmt.setInt(1, smoothieId);
+            
+            stmt.executeUpdate();
+        }
+    }
 }

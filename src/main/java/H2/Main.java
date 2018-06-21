@@ -61,6 +61,7 @@ public class Main {
         // smoothien poistaminen
         Spark.get("/smoothie/:id", (req, res) -> {
             Integer smoothieId = Integer.parseInt(req.params(":id"));
+            SRADAO.deleteBySmoothieId(smoothieId);
             smoothieDAO.delete(smoothieId);
 
             res.redirect("/smoothiet");
@@ -104,6 +105,7 @@ public class Main {
         // raaka-aineen poistaminen
         Spark.get("/ainekset/:id", (req, res) -> {
             Integer raakaAineId = Integer.parseInt(req.params(":id"));
+            SRADAO.deleteByResourceId(raakaAineId);
             raakaAineDAO.delete(raakaAineId);
 
             res.redirect("/ainekset");
