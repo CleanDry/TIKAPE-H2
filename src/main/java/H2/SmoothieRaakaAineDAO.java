@@ -190,7 +190,7 @@ public class SmoothieRaakaAineDAO implements Dao<SmoothieRaakaAine, Integer> {
     public void deleteBySmoothieId(Integer smoothieId) throws SQLException {
         try (Connection conn = database.getConnection()) {
             PreparedStatement stmt = conn.prepareStatement(
-                    "DELETE FROM SmoothieRaakaAine WHERE raaka_aine_id = ?");
+                    "DELETE FROM SmoothieRaakaAine WHERE smoothie_id = ?");
             stmt.setInt(1, smoothieId);
             
             stmt.executeUpdate();
